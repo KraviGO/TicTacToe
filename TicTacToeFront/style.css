@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: #222020;
+}
+
+.playground {
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    height: 400px;
+    width: 400px;
+}
+
+.startMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #aa2929;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.startMenu > button {
+    height: 50px;
+    width: 150px;
+    margin: 10px;
+    border: none;
+    background-color: #222020;
+    color: #e67e5d;
+    font-size: 30px;
+    border-radius: 10px;
+}
+
+.startMenu > button:hover {
+    background-color: #0e0e0e;
+    color: #ddcbcb;
+}
+
+.playGrid {
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+
+    display: none;
+    /*display: grid;*/
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /*height: 100%;*/
+    /*width: 100%;*/
+}
+
+.gameInfo {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    font-size: 30px;
+    color: #e67e5d;
+    border-radius: 0 0 15px 15px;
+    background-color: #000000;
+}
+
+#goToMenuBtn {
+    display: none;
+    height: 50px;
+    width: 100%;
+    border: none;
+    border-radius: 15px 15px 0 0;
+    background-color: #040407;
+    color: #e67e5d;
+    font-size: 30px;
+}
+
+#goToMenuBtn:hover {
+    color: #e1d1cc;
+}
+
+.playGridCell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    background-color: #aa2929;
+    border-radius: 10px;
+    border: black solid 1px;
+    font-size: 80px;
+}
+
+.playGridCell.active:hover {
+    background-color: #c32121;
+}
+

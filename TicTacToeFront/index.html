@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <title>TicTacToe</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="playground">
+            <button id="goToMenuBtn">В меню</button>
+            <div class="startMenu">
+                <button class="startMenuButton" id="OfflineGameBtn">Offline</button>
+                <button class="startMenuButton" id="OnlineGameBtn">Online</button>
+            </div>
+            <div class="playGrid">
+                <div class="playGridCell active" id="cell-11" data-row="1" data-col="1"></div>
+                <div class="playGridCell active" id="cell-12" data-row="1" data-col="2"></div>
+                <div class="playGridCell active" id="cell-13" data-row="1" data-col="3"></div>
+                <div class="playGridCell active" id="cell-21" data-row="2" data-col="1"></div>
+                <div class="playGridCell active" id="cell-22" data-row="2" data-col="2"></div>
+                <div class="playGridCell active" id="cell-23" data-row="2" data-col="3"></div>
+                <div class="playGridCell active" id="cell-31" data-row="3" data-col="1"></div>
+                <div class="playGridCell active" id="cell-32" data-row="3" data-col="2"></div>
+                <div class="playGridCell active" id="cell-33" data-row="3" data-col="3"></div>
+            </div>
+            <div class="gameInfo" id="gameInfo"></div>
+      </section>
+
+      <script src="script.js"></script>
+      <script src="TicTacToe.js"></script>
+      <script src="offlineGame.js"></script>
+      <script src="onlineGame.js"></script>
+</body>
+</html>
