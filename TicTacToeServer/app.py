@@ -7,7 +7,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Замените "*" на конкретные домены в продакшене
+    allow_origins=["*"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,14 +28,12 @@ async def root():
 
 @app.post("/new_player")
 async def new_player():
-    """Добавление нового игрока в очередь."""
     player_code = gameRouter.add_player()
     return {"player_code": player_code}
 
 
 @app.post("/game/move")
 async def move_player(move: MoveRequest):
-    """Обработка хода игрока."""
     result = gameRouter.move_player(move.player_code, move.row, move.col)
     if not result:
         raise HTTPException(status_code=400, detail="Invalid move")
@@ -47,7 +45,6 @@ class PlayerRequest(BaseModel):
 
 @app.post("/game")
 async def get_game(request: PlayerRequest):
-    """Получение текущего состояния игровой доски."""
     game = gameRouter.get_game(request.player_code)
     if not game:
         raise HTTPException(status_code=404, detail="Game not found")
@@ -56,13 +53,11 @@ async def get_game(request: PlayerRequest):
 
 @app.post("/game/delete")
 async def delete_game(request: PlayerRequest):
-    """Получение текущего состояния игровой доски."""
     result = gameRouter.delete_game(request.player_code)
     if not result:
         raise HTTPException(status_code=404, detail="Game not found")
     return {"result": result}
 
-# Запуск сервера
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("app:app", host="127.0.0.1", port=8000, reload=True)
